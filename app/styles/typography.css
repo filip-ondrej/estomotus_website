@@ -1,0 +1,93 @@
+﻿.type-hero {
+    font-size: var(--type-hero);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: var(--tracking-heading);
+}
+
+.type-section {
+    font-size: var(--type-section);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: var(--tracking-heading);
+    text-wrap: balance;
+}
+
+.type-subsection {
+    font-size: var(--type-subsection);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+}
+
+.type-body {
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+}
+
+.type-support {
+    font-size: var(--type-support);
+    line-height: var(--leading-body);
+    color: var(--muted);
+}
+
+.type-meta, .technical {
+    font-family: var(--font-technical);
+    font-size: var(--type-meta);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: .015em;
+    font-variant-numeric: tabular-nums;
+}
+
+.type-nav {
+    font-size: var(--type-nav);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.type-button {
+    font-size: var(--type-button);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.type-caption {
+    font-size: var(--type-caption);
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* Current homepage editorial hierarchy; legacy subpage roles remain unchanged. */
+.type-editorial-heading {
+    font-family: var(--font-primary);
+    font-size: var(--type-editorial-heading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-heading);
+    letter-spacing: var(--tracking-editorial-heading);
+}
+
+.type-editorial-subheading {
+    font-family: var(--font-primary);
+    font-size: var(--type-editorial-subheading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-subheading);
+    letter-spacing: var(--tracking-editorial-subheading);
+}
+
+.type-editorial-label {
+    font-size: var(--type-caption);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-label);
+    letter-spacing: var(--tracking-label);
+    color: var(--muted);
+}
+
+/* Product and project titles share the approved editorial subheading role. */
+.type-product, .home .type-product {
+    font-family: var(--font-primary);
+    font-size: var(--type-editorial-subheading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-subheading);
+    letter-spacing: var(--tracking-editorial-subheading);
+}

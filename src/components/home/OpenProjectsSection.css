@@ -1,0 +1,114 @@
+﻿/* Section 05: a compact technical study, using the workshop's editorial roles. */
+.em-projects.em-platform-section {
+    --project-columns: minmax(0, 45fr) minmax(0, 55fr);
+    --project-gutter: clamp(var(--space-8), 4vw, var(--space-16));
+    padding-block: var(--space-12) var(--section-outset);
+}
+.em-projects .em-project-intro,
+.em-projects .em-project-feature {
+    display: grid;
+    grid-template-columns: var(--project-columns);
+    column-gap: var(--project-gutter);
+}
+.em-projects .em-project-intro {
+    align-items: center;
+    padding-bottom: var(--space-4);
+    border-bottom: var(--stroke-ui) solid var(--line);
+}
+.em-projects .em-section-label {
+    padding-top: 0;
+    margin-bottom: var(--space-4);
+    font-family: var(--font-primary);
+    font-size: var(--type-caption);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-label);
+    letter-spacing: var(--tracking-label);
+}
+.home .em-projects .em-project-intro h2 {
+    font-family: var(--font-primary);
+    font-size: var(--type-editorial-heading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-heading);
+    letter-spacing: var(--tracking-editorial-heading);
+}
+.em-projects .em-project-intro-copy {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+}
+.em-projects .em-project-feature {
+    align-items: start;
+    padding-top: var(--content-gap);
+}
+.em-projects .em-project-copy { min-width: 0; padding: 0; }
+.em-projects .em-project-status {
+    color: var(--accent);
+    font-family: var(--font-technical);
+    font-size: var(--type-annotation);
+    line-height: var(--leading-technical);
+    text-transform: uppercase;
+}
+.home .em-projects .em-project-copy h3 {
+    margin-block: var(--space-3);
+}
+.em-projects .em-project-description {
+    max-width: 29rem;
+    color: var(--muted);
+    font-size: var(--type-support);
+    line-height: var(--leading-body);
+}
+.em-projects .em-project-specification {
+    max-width: 29rem;
+    margin-top: var(--space-4);
+    border-block: var(--stroke-ui) solid var(--line);
+    font-family: var(--font-technical);
+    font-size: var(--type-annotation);
+    line-height: var(--leading-technical);
+}
+.em-projects .em-project-specification > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding-block: var(--space-2);
+}
+.em-projects .em-project-specification dt { color: var(--muted); }
+.em-projects .em-project-specification dd { min-width: 0; margin: 0; text-align: right; }
+.em-projects .em-project-action { margin-top: var(--space-4); }
+.em-projects .em-project-figure {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+.em-projects .em-project-picture-placeholder {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--muted);
+    font-family: var(--font-technical);
+    font-size: var(--type-annotation);
+    line-height: var(--leading-technical);
+}
+.em-projects .em-project-published-image { position: relative; width: 100%; aspect-ratio: 2 / 1; }
+.em-projects .em-project-published-image img { object-fit: cover; }
+@media (min-width: 901px) {
+    .em-projects .em-project-intro { row-gap: var(--space-4); }
+    .em-projects .em-project-intro-heading { display: contents; }
+    .em-projects .em-section-label { grid-area: 1 / 1; margin-bottom: 0; }
+    .em-projects .em-project-intro h2 { grid-area: 2 / 1; }
+    .em-projects .em-project-intro-copy { grid-area: 2 / 2; }
+}
+@media (min-width: 1101px) {
+    .em-projects .em-project-intro h2 br { display: none; }
+}
+@media (max-width: 900px) {
+    .em-projects .em-project-intro,
+    .em-projects .em-project-feature { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-6); }
+    .home .em-projects .em-project-intro h2 { font-size: max(var(--type-editorial-heading), 2rem); }
+    .em-projects .em-project-description,
+    .em-projects .em-project-specification { max-width: none; }
+}

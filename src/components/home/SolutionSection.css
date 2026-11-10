@@ -1,0 +1,158 @@
+/* Section 03 only. Keep the shared Hero/Mission font and container system. */
+.em-solution.em-platform-section {
+    padding-block: var(--section-inset);
+    padding-bottom: var(--section-outset);
+    font-family: var(--font-primary);
+}
+
+.em-solution .em-section-label { font-size: var(--type-caption); font-weight: var(--weight-editorial); line-height: var(--leading-label); letter-spacing: var(--tracking-label); }
+.em-solution .em-section-label > p::before { background: var(--brass); }
+.em-solution .em-section-heading {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    margin-block: var(--heading-gap) var(--content-gap);
+    padding-bottom: var(--space-5);
+    border-bottom: var(--stroke-ui) solid var(--line);
+    align-items: center;
+}
+.home .em-solution .em-section-heading h2 {
+    font-family: var(--font-primary);
+    font-size: var(--type-editorial-heading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-heading);
+    letter-spacing: var(--tracking-editorial-heading);
+}
+.em-solution .em-section-heading h2 > span { display: block; color: var(--foreground); }
+.em-solution .em-section-heading > p { max-width: 36rem; font-size: var(--type-body); line-height: var(--leading-body); }
+.em-solution .em-joint-strip { border: 0; padding: 0; overflow: visible; min-height: 12.25rem; }
+.em-solution .em-joint-study { height: 174px; min-width: 0; }
+.em-solution-parts { display: none; }
+
+/* Only color changes: the schematic's geometry and neutral parts are preserved. */
+.em-solution-explorer[data-category="integrated"] :is([data-part="gearbox"], [data-part="motor"], [data-part="encoder"], [data-part="housing"]),
+.em-solution-explorer[data-category="tuned"] :is([data-part="motor"], [data-part="encoder"], [data-part="controller"]),
+.em-solution-explorer[data-category="connected"] [data-part="connection"],
+.em-solution-explorer[data-category="software"] [data-part="controller"] { stroke: var(--brass); }
+.em-solution-explorer[data-category="integrated"] [data-part="encoder"] [stroke],
+.em-solution-explorer[data-category="tuned"] :is([data-part="encoder"], [data-part="controller"]) [stroke],
+.em-solution-explorer[data-category="software"] [data-part="controller"] [stroke] { stroke: var(--brass); }
+
+.em-solution-window { position: relative; }
+.em-solution-outline {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--line-interactive);
+    stroke-width: var(--stroke-ui);
+    pointer-events: none;
+}
+.em-solution-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-4);
+    padding-inline: calc(var(--radius-tab) + var(--radius-fillet));
+    margin-top: var(--space-4);
+}
+.em-solution-tabs button {
+    position: relative;
+    min-height: var(--space-12);
+    padding: var(--space-3) var(--space-6);
+    border: 0;
+    background: transparent;
+    color: var(--foreground);
+    transition: color var(--duration-fast);
+    font-family: var(--font-primary);
+    font-size: var(--type-meta);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-technical);
+    letter-spacing: var(--tracking-tab);
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.em-solution-tab-label {
+    display: inline-block;
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+.em-solution-tabs button:is(:hover, :focus-visible, [aria-selected="true"]) { color: var(--accent); }
+.em-solution-tabs button:is(:hover, :focus-visible, [aria-selected="true"]) .em-solution-tab-label { transform: scale(1.05); }
+.em-solution-tabs button:focus-visible,
+.em-solution-panel:focus-visible { outline: var(--stroke-focus) solid var(--focus); outline-offset: -5px; }
+.em-solution-panel {
+    display: grid;
+    margin-top: calc(-1 * var(--stroke-ui));
+    padding: var(--space-5) var(--space-6);
+    /* Retain the content inset; the single SVG contour owns the visible border. */
+    border: var(--stroke-ui) solid transparent;
+    background: var(--background);
+}
+.em-solution .em-solution-detail {
+    grid-area: 1 / 1;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-4) clamp(2rem, 4vw, 4rem);
+    align-items: start;
+    padding: 0;
+    visibility: hidden;
+}
+.em-solution .em-solution-detail[data-active="true"] { visibility: visible; }
+.em-solution .em-solution-detail h3 {
+    max-width: 35rem;
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--type-editorial-subheading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-subheading);
+    letter-spacing: var(--tracking-editorial-subheading);
+}
+.em-solution .em-detail-copy { font-size: var(--type-body); line-height: var(--leading-body); }
+.em-solution .em-technical-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+    font: var(--type-meta)/var(--leading-technical) var(--font-technical);
+}
+.em-solution .em-technical-list li {
+    padding: var(--space-chip-block) var(--space-2);
+    border: var(--stroke-ui) solid var(--line-interactive);
+    border-radius: var(--radius-control);
+    background: transparent;
+    cursor: default;
+}
+.em-solution .em-platform-disclosure { margin-top: var(--space-4); padding: 0; border: 0; font-size: var(--type-caption); line-height: var(--leading-technical); }
+
+@media (max-width: 820px) {
+    .em-solution .em-section-heading { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+    .em-solution .em-section-heading > p { max-width: 40rem; font-size-adjust: ex-height var(--font-mobile-body-aspect); }
+    .em-solution .em-detail-copy { font-size-adjust: ex-height var(--font-mobile-body-aspect); }
+    .em-solution .em-solution-detail { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+    .em-solution.em-platform-section { padding-block: var(--space-14); padding-bottom: var(--space-20); }
+    .em-solution .em-joint-study { height: auto; aspect-ratio: 4; }
+    .em-solution .em-joint-study text { display: none; }
+    .em-solution-parts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-1) var(--space-3);
+        margin-block: var(--space-1) var(--space-3);
+        color: var(--muted);
+        font: var(--type-annotation)/var(--leading-technical) var(--font-technical);
+    }
+    .em-solution .em-joint-strip { min-height: 0; padding-bottom: var(--space-5); }
+    .em-solution-tabs {
+        display: flex;
+        gap: var(--space-4);
+        margin-top: 0;
+        overflow-x: auto;
+        scroll-padding-inline: var(--space-4);
+        scrollbar-width: none;
+    }
+    .em-solution-tabs::-webkit-scrollbar { display: none; }
+    .em-solution-tabs button { flex: 0 0 auto; font-size: var(--type-meta); letter-spacing: var(--tracking-tab); }
+    .em-solution-panel { min-height: 0; padding: var(--space-6); }
+}

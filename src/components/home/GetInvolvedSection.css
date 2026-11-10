@@ -1,0 +1,86 @@
+/* Centered closing CTA; shared transition and Hero control geometry are preserved. */
+.em-involved {
+    position: relative;
+    padding-block: var(--section-inset) var(--space-12);
+    font-family: var(--font-primary);
+    text-align: center;
+}
+.em-involved .em-involved-shell {
+    width: var(--content-width);
+    padding-inline: 0;
+}
+.em-involved-intro {
+    max-width: 64rem;
+    margin-inline: auto;
+}
+.home .em-involved-intro h2 {
+    font-family: var(--font-primary);
+    font-size: var(--type-closing);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-closing);
+    letter-spacing: var(--tracking-hero-editorial);
+    color: var(--foreground);
+    text-wrap: balance;
+}
+.em-involved-intro > p {
+    max-width: 32rem;
+    margin: var(--space-3) auto 0;
+    color: var(--muted);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+}
+.em-closing-signup {
+    width: 100%;
+    max-width: 32.5rem;
+    margin: var(--space-4) auto 0;
+}
+.em-signup-benefits {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    max-width: min(100%, 32.5rem);
+    margin: var(--space-3) auto 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--type-meta);
+    color: var(--muted);
+    text-wrap: balance;
+}
+.em-signup-benefits > li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    white-space: nowrap;
+}
+.em-signup-benefits > li + li::before {
+    content: "·";
+    color: var(--accent);
+}
+.em-partner-invitation {
+    margin-top: var(--space-6);
+    color: var(--muted);
+    font-size: var(--type-button);
+    line-height: var(--leading-body);
+    text-wrap: balance;
+}
+.em-partner-invitation .text-link {
+    gap: var(--space-2);
+    color: var(--foreground);
+}
+.em-partner-invitation .text-link > span:first-child {
+    border-bottom-color: color-mix(in srgb, var(--foreground) 40%, transparent);
+    padding-bottom: 0;
+}
+.em-partner-invitation .text-link:hover {
+    color: var(--accent);
+}
+@media (max-width: 760px) {
+    .em-closing-signup .email-capture .form-input { padding-inline: var(--space-3); }
+    .em-signup-benefits {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+    .em-signup-benefits > li { max-width: 100%; white-space: normal; }
+    .em-signup-benefits > li + li::before { content: none; }
+}

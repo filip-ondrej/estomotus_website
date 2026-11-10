@@ -1,0 +1,212 @@
+/* Hero-only geometry; shared palette, fonts and controls remain unchanged. */
+.em-hero {
+    --hero-gutter: var(--gutter);
+    --hero-image-overhang: 1rem;
+    --hero-content-padding: clamp(3.5rem, 7svh, 5rem);
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+    padding-top: var(--header-height);
+    padding-bottom: 0;
+}
+
+.em-hero .em-hero-composition {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 2.5vw, 2.5rem);
+    align-items: center;
+    width: var(--content-width);
+    padding-inline: 0;
+    padding-block: var(--hero-content-padding);
+}
+
+.em-hero-copy {
+    position: relative;
+    z-index: 1;
+    grid-column: 1 / span 8;
+    width: 100%;
+    max-width: 56rem;
+    min-width: 0;
+    container-type: inline-size;
+}
+
+.em-hero-introduction {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    color: var(--muted);
+    font-size: var(--type-caption);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.em-hero-introduction::before {
+    content: "";
+    flex: 0 0 5px;
+    height: 5px;
+    background: var(--accent);
+}
+
+.em-hero .em-hero-headline {
+    margin-top: var(--space-7);
+    font-family: var(--font-primary);
+    /* Fit the actual text region, including the current system-font fallback. */
+    font-size: var(--type-hero-editorial);
+    font-weight: 500;
+    line-height: var(--leading-hero-editorial);
+    letter-spacing: var(--tracking-hero-editorial);
+}
+
+.em-hero-headlineLine {
+    display: block;
+    text-wrap: balance;
+}
+
+.em-hero-support {
+    max-width: 32.5rem;
+    margin-top: var(--space-10);
+}
+
+.em-hero-description {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--type-body);
+    line-height: 1.55;
+}
+
+.em-hero-signup {
+    width: 100%;
+    margin-top: var(--space-7);
+}
+
+.em-hero-visualization {
+    position: absolute;
+    z-index: 0;
+    right: calc(-1 * var(--hero-image-overhang));
+    bottom: -1rem;
+    width: min(50vw, 50rem);
+    margin: 0;
+    pointer-events: none;
+}
+
+.em-hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 761px) {
+    .em-hero .em-hero-composition {
+        /* The Hero already includes the navbar offset; content can grow freely. */
+        min-height: calc(100svh - 45px - var(--header-height));
+    }
+
+    .em-hero-description {
+        letter-spacing: .005em;
+        text-wrap: balance;
+    }
+}
+
+@media (min-width: 1101px) {
+    .em-hero-copy {
+        /* Interpolate from +4.5% at 16:10 to -3% at 16:9 without a breakpoint jump. */
+        --hero-type-scale: clamp(.97, calc(1.72 - .421875 * (100vw / 100svh)), 1.045);
+    }
+
+    .em-hero-introduction {
+        font-size: calc(var(--type-caption) * var(--hero-type-scale));
+    }
+
+    .em-hero .em-hero-headline {
+        font-size: calc(var(--type-hero-editorial) * var(--hero-type-scale));
+        margin-top: calc(var(--space-7) * var(--hero-type-scale));
+    }
+
+    .em-hero-support {
+        margin-top: calc(var(--space-10) * var(--hero-type-scale));
+    }
+
+    .em-hero-description {
+        font-size: calc(var(--type-body) * var(--hero-type-scale));
+    }
+
+    .em-hero-signup {
+        margin-top: calc(var(--space-7) * var(--hero-type-scale));
+    }
+
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+    .em-hero {
+        --hero-image-overhang: 1rem;
+    }
+
+    .em-hero-copy {
+        grid-column: 1 / span 7;
+    }
+
+    .em-hero-visualization {
+        width: 44vw;
+        bottom: -1rem;
+    }
+
+    .em-hero .em-hero-headline {
+        margin-top: var(--space-8);
+    }
+
+    .em-hero-support {
+        margin-top: var(--space-4);
+    }
+
+    .em-hero-signup {
+        margin-top: var(--space-7);
+    }
+}
+
+@media (max-width: 760px) {
+    .em-hero {
+        --hero-content-padding: calc((var(--space-12) + var(--space-6) + .5rem + 2.95rem) / 2);
+        padding-bottom: var(--space-6);
+    }
+
+    .em-hero .em-hero-composition {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .em-hero-copy {
+        grid-column: 1;
+    }
+
+    .em-hero .em-hero-headline {
+        margin-top: var(--space-8);
+        /* Accommodate looser tracking without adding a mobile headline line. */
+        width: calc(100% + var(--hero-gutter));
+        font-size: var(--type-hero-mobile);
+        /* Preserve the approved mobile wraps after replacing Segoe UI with Plex. */
+        font-size-adjust: ex-height .5;
+    }
+
+    .em-hero-support {
+        margin-top: var(--space-6);
+    }
+
+    .em-hero-description {
+        line-height: 1.65;
+        font-size-adjust: ex-height .512;
+    }
+
+    .em-hero-signup {
+        margin-top: var(--space-7);
+    }
+
+    .em-hero-visualization {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: min(100%, 32rem);
+        margin: var(--space-10) 0 calc(-1 * var(--space-6)) auto;
+    }
+
+}

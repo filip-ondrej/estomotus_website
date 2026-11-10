@@ -1,0 +1,159 @@
+/* Brand primitives. Semantic theme variables below are the component contract. */
+:root {
+    --ivory: #ece7df;
+    --graphite: #0b0b0c;
+    --media-background: #000000;
+    --soft-white: #f5f4f2;
+    --ink: #111111;
+    --silver: #8f8b86;
+    --warm-border: #d0cbc3;
+    --dark-border: #292929;
+    --brass: #a78556;
+    --brass-on-light: #76572e;
+    --brass-on-dark: #c2a16f;
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+    --font-primary: var(--font-brand-loaded, var(--font-primary-loaded, var(--font-system)));
+    --font-technical: var(--font-technical-loaded, "Courier New", monospace);
+
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-14: 3.5rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-28: 7rem;
+    --container-max: 90rem;
+    --gutter: clamp(1.5rem, 5vw, 5rem);
+    --content-width: min(var(--container-max), calc(100% - 2 * var(--gutter)));
+    --layout-gap: clamp(var(--space-8), 4vw, var(--space-16));
+    --section-inset-compact: var(--space-10);
+    --section-inset: var(--space-16);
+    --section-outset: var(--space-24);
+    --heading-gap: var(--space-4);
+    --content-gap: var(--space-6);
+    --control-height: 46px;
+    --control-padding-start: 14px;
+    --control-padding-end: 10px;
+    --control-gap: 10px;
+    --control-width: 9.6875rem;
+    --capture-padding: 5px;
+    --input-padding-block: 10px;
+    --input-padding-inline: 18px;
+    --tracking-button: .08em;
+    --type-access: .6875rem;
+    --weight-button: 600;
+    --type-closing: clamp(2.25rem, calc(5vw + .5rem), 4.25rem);
+    --leading-closing: 1.06;
+    --section-space: clamp(4.5rem, 7vw, 6.5rem);
+    --header-height: 4.5rem;
+    --radius-sm: .25rem;
+    --radius-md: .5rem;
+    --radius-control: 3px;
+    --radius-tab: 1.5rem;
+    --radius-fillet: 1rem;
+    --stroke-ui: 1px;
+    --stroke-focus: 2px;
+    --space-chip-block: 3px;
+    --duration-fast: 160ms;
+    --duration-theme: 240ms;
+    --ease-out: cubic-bezier(.2, .7, .2, 1);
+
+    --type-hero: clamp(2.625rem, 5.5vw, 5.25rem);
+    --type-section: clamp(2.25rem, 4.7vw, 4.75rem);
+    --type-subsection: clamp(1.375rem, 2vw, 1.875rem);
+    --type-body: clamp(1rem, 1.25vw, 1.125rem);
+    --type-support: 1rem;
+    --type-meta: .75rem;
+    --type-nav: .875rem;
+    --type-button: .875rem;
+    --type-caption: .75rem;
+    --leading-body: 1.7;
+    --tracking-heading: -.05em;
+    /* Approved editorial roles from Hero/Mission. Legacy type roles stay stable. */
+    --type-hero-editorial: clamp(2.25rem, 8.235cqi, 4.725rem);
+    --type-hero-mobile: clamp(2rem, 11vw, 3rem);
+    --type-editorial-heading: clamp(1.25rem, 3.7vw, 3.5rem);
+    --type-editorial-subheading: clamp(1.5rem, 2.4vw, 2.25rem);
+    --weight-editorial: 500;
+    --leading-editorial-heading: 1.1;
+    --leading-hero-editorial: .96;
+    --leading-editorial-subheading: 1.25;
+    --leading-label: 1.5;
+    --leading-technical: 1.6;
+    --tracking-editorial-heading: -.025em;
+    --tracking-hero-editorial: -.01em;
+    --tracking-editorial-subheading: -.02em;
+    --tracking-label: .12em;
+    --tracking-tab: .065em;
+    --type-annotation: var(--type-meta);
+    --font-mobile-body-aspect: .507;
+}
+
+:root, [data-theme="dark"] {
+    color-scheme: dark;
+    --background: var(--graphite);
+    --foreground: var(--soft-white);
+    --muted: #a7a29b;
+    --line: var(--dark-border);
+    --line-interactive: #393939;
+    --surface: #151516;
+    --surface-raised: #1c1c1d;
+    --surface-hover: #252526;
+    --accent: var(--brass-on-dark);
+    --focus: var(--brass-on-dark);
+    --button-bg: var(--soft-white);
+    --button-marker: var(--brass-on-light);
+    --button-text: var(--ink);
+    --button-hover: var(--ivory);
+    --glass-tint: rgb(11 11 12 / 84%);
+    --glass-border: rgb(245 244 242 / 18%);
+    --glass-highlight: rgb(245 244 242 / 7%);
+    --glass-shadow: rgb(0 0 0 / 14%);
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+    --background: var(--ivory);
+    --foreground: var(--ink);
+    --muted: #655f58;
+    --line: var(--warm-border);
+    --line-interactive: var(--warm-border);
+    --surface: #e2ddd5;
+    --surface-raised: var(--soft-white);
+    --surface-hover: #dcd6cc;
+    --accent: var(--brass-on-light);
+    --focus: var(--brass-on-light);
+    --button-bg: var(--ink);
+    --button-marker: var(--brass-on-dark);
+    --button-text: var(--soft-white);
+    --button-hover: #30302f;
+    --glass-tint: rgb(236 231 223 / 85%);
+    --glass-border: rgb(17 17 17 / 14%);
+    --glass-highlight: rgb(255 255 255 / 48%);
+    --glass-shadow: rgb(17 17 17 / 6%);
+}
+
+[data-theme] {
+    color: var(--foreground);
+}
+
+@media (max-width: 760px) {
+    :root {
+        --type-hero: clamp(2.625rem, 8.8vw, 4rem);
+    }
+}
+
+@media (max-width: 820px) {
+    :root {
+        --type-editorial-heading: clamp(1.125rem, 5.2vw, 2.5rem);
+        --type-editorial-subheading: clamp(1rem, 4.4vw, 2rem);
+    }
+}

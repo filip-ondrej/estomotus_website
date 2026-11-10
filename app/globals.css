@@ -1,0 +1,109 @@
+﻿@import "tailwindcss";
+@import "./styles/tokens.css";
+@import "./styles/typography.css";
+@import "./styles/components.css";
+@import "../src/components/home/home.css";
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-muted: var(--muted);
+    --color-line: var(--line);
+    --color-line-interactive: var(--line-interactive);
+    --color-surface-hover: var(--surface-hover);
+    --color-ivory: var(--ivory);
+    --color-graphite: var(--graphite);
+    --color-soft-white: var(--soft-white);
+    --color-ink: var(--ink);
+    --color-silver: var(--silver);
+    --color-brass: var(--brass);
+    --color-accent: var(--accent);
+    --color-surface: var(--surface);
+    --color-surface-raised: var(--surface-raised);
+    --font-sans: var(--font-primary);
+    --font-mono: var(--font-technical);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--background);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--background);
+}
+
+a, button, input, textarea, select {
+    outline-offset: 5px;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+input, textarea, select, button {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: var(--stroke-focus) solid var(--focus);
+    outline-offset: 5px;
+}
+
+[id] {
+    scroll-margin-top: calc(var(--header-height) + var(--space-6));
+}
+
+.shell {
+    width: var(--content-width);
+    margin-inline: auto;
+    padding-inline: 0;
+}
+
+.layout-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.section-theme {
+    background: var(--background);
+    color: var(--foreground);
+}
+
+.section-space {
+    padding-block: var(--section-space);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Shared foundation entry point. */
+
+

@@ -1,0 +1,48 @@
+/* Shared raised boundary tab, matching the Mission bookmark geometry. */
+:is(.em-progress-cue, .em-section-transition) {
+    position: absolute;
+    z-index: 1;
+    top: calc(-1 * var(--space-12));
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: min(15.625rem, calc(100vw - 3rem));
+    min-height: var(--space-12);
+    padding: var(--space-3);
+    border-radius: var(--radius-tab) var(--radius-tab) 0 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    font-size: var(--type-meta);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-technical);
+    letter-spacing: var(--tracking-tab);
+}
+
+:is(.em-progress-cue, .em-section-transition)::before,
+:is(.em-progress-cue, .em-section-transition)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: var(--radius-fillet);
+    height: var(--radius-fillet);
+    pointer-events: none;
+}
+:is(.em-progress-cue, .em-section-transition)::before {
+    right: 100%;
+    background: radial-gradient(circle at top left, transparent var(--radius-fillet), var(--background) var(--radius-fillet));
+}
+:is(.em-progress-cue, .em-section-transition)::after {
+    left: 100%;
+    background: radial-gradient(circle at top right, transparent var(--radius-fillet), var(--background) var(--radius-fillet));
+}
+:is(.em-progress-cue, .em-section-transition) span {
+    color: var(--accent);
+    font-family: var(--font-technical);
+    font-size: var(--type-nav);
+    line-height: 1;
+}
+:is(.em-progress-cue, .em-section-transition):hover { color: var(--foreground); }

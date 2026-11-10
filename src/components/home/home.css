@@ -1,0 +1,1130 @@
+.home {
+    overflow: clip;
+}
+
+.home h1, .home h2, .home h3 {
+    font-weight: 500;
+}
+
+.home h2 {
+    font-size: var(--type-section);
+    line-height: 1.06;
+    letter-spacing: var(--tracking-heading);
+    text-wrap: balance;
+}
+
+.home h2 span {
+    color: var(--muted);
+}
+
+.home p {
+    text-wrap: pretty;
+}
+
+.section-kicker {
+    color: var(--muted);
+    font-size: var(--type-caption);
+    letter-spacing: .015em;
+    margin-bottom: var(--space-6);
+}
+
+.status-dot {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: var(--space-2);
+    vertical-align: middle;
+}
+
+.local-media {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.local-media-image, .local-media video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.motion-media {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.motion-media .local-media-image {
+    object-fit: contain;
+}
+
+/* A single hero render; the following sections use other visual forms. */
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    column-gap: var(--space-4);
+    padding-top: 145px;
+    padding-bottom: var(--space-7);
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    align-self: center;
+    padding-block: var(--space-3) var(--space-14);
+}
+
+.hero .section-kicker {
+    font-size: var(--type-caption);
+    letter-spacing: .025em;
+}
+
+.hero h1 {
+    font-size: var(--type-hero);
+    line-height: 1.005;
+    letter-spacing: -.063em;
+}
+
+.hero h1 span {
+    color: var(--muted);
+}
+
+.hero-description {
+    max-width: 420px;
+    margin-top: var(--space-7);
+    font-size: var(--type-body);
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.signup {
+    max-width: 450px;
+    margin-top: var(--space-7);
+}
+
+.hero-art {
+    position: relative;
+    min-height: 570px;
+}
+
+.hero-art .motion-media {
+    position: absolute;
+    width: 116%;
+    height: 100%;
+    left: -3%;
+    top: -16px;
+}
+
+.hero-art-label {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--muted);
+    font-size: var(--type-caption);
+    letter-spacing: .08em;
+}
+
+.concept-tag {
+    position: absolute;
+    left: 15%;
+    bottom: 35px;
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--type-caption);
+    border-radius: 7px;
+}
+
+.concept-tag > span:last-child {
+    display: block;
+    color: var(--muted);
+    font-size: var(--type-caption);
+    margin-top: var(--space-2);
+    padding-left: var(--space-4);
+}
+
+.hero-baseline {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--line);
+    font-size: var(--type-caption);
+    color: var(--muted);
+}
+
+.hero-baseline a {
+    transition: color 180ms;
+}
+
+.hero-baseline a:hover {
+    color: var(--foreground);
+}
+
+.hero-baseline a > span:last-child {
+    margin-left: var(--space-4);
+}
+
+/* The value proposition is a connected workflow, not a feature grid. */
+.section-heading {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: var(--space-14);
+    align-items: end;
+}
+
+.section-heading > p {
+    max-width: 370px;
+    color: var(--muted);
+    font-size: var(--type-body);
+    line-height: 1.8;
+    padding-bottom: 3px;
+}
+
+.integration-workbench {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: var(--space-16);
+    margin-top: var(--space-12);
+    align-items: center;
+}
+
+.workflow-controls {
+    display: grid;
+}
+
+.workflow-controls button {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 24px 1fr 16px;
+    gap: var(--space-5);
+    padding: var(--space-7) 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    transition: color 220ms;
+}
+
+.workflow-controls button:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.workflow-controls button:hover {
+    color: var(--muted);
+}
+
+.workflow-controls button[aria-pressed="true"] {
+    color: var(--foreground);
+}
+
+.workflow-index {
+    font-size: var(--type-caption);
+    padding-top: var(--space-2);
+    font-variant-numeric: tabular-nums;
+}
+
+.workflow-controls strong {
+    display: block;
+    font-size: var(--type-subsection);
+    font-weight: 450;
+    letter-spacing: -.04em;
+    line-height: 1.2;
+}
+
+.workflow-controls button > span:nth-child(2) > span {
+    display: block;
+    font-size: var(--type-caption);
+    line-height: 1.6;
+    margin-top: var(--space-2);
+    color: var(--muted);
+}
+
+.workflow-arrow {
+    font-size: var(--type-subsection);
+    opacity: 0;
+    transition: opacity 200ms, transform 200ms;
+    transform: translate(-4px, 4px);
+}
+
+.workflow-controls [aria-pressed="true"] .workflow-arrow {
+    opacity: 1;
+    transform: none;
+}
+
+.workflow-detail {
+    background: var(--surface);
+    padding: var(--space-7);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+.system-boundary {
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: var(--space-4) var(--space-5) 0;
+    transition: border-color 220ms;
+}
+
+.system-caption {
+    display: block;
+    font-size: var(--type-caption);
+    color: var(--muted);
+    text-align: center;
+}
+
+.joint-stack {
+    display: flex;
+    padding-block: var(--space-6);
+    align-items: center;
+    justify-content: center;
+}
+
+.stack-piece {
+    position: relative;
+    width: 31%;
+    min-height: 115px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: var(--space-3) var(--space-2);
+    color: var(--muted);
+    transition: color 250ms, border-color 250ms, background 250ms;
+}
+
+.stack-piece:first-child {
+    border-radius: 16px 0 0 16px;
+}
+
+.stack-piece:last-child {
+    border-radius: 0 16px 16px 0;
+}
+
+.stack-piece + .stack-piece {
+    margin-left: -1px;
+}
+
+.stack-piece > span {
+    font-size: var(--type-caption);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.stack-piece i {
+    position: absolute;
+    top: 18px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+}
+
+.stack-piece i::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+}
+
+.motor i {
+    border-radius: 2px;
+}
+
+.control i {
+    border-style: dashed;
+    border-radius: 3px;
+}
+
+.system-interface {
+    border-top: 1px solid var(--line);
+    margin-inline: -18px;
+    padding: var(--space-3) var(--space-2);
+    font-size: var(--type-caption);
+    text-align: center;
+    color: var(--muted);
+    transition: color 250ms;
+}
+
+.system-map[data-step="mount"] .transmission, .system-map[data-step="mount"] .motor, .system-map[data-step="connect"] .control {
+    color: var(--foreground);
+    border-color: var(--muted);
+    background: var(--surface);
+}
+
+.system-map[data-step="connect"] .system-interface, .system-map[data-step="develop"] .system-interface {
+    color: var(--foreground);
+}
+
+.system-connection {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    color: var(--muted);
+}
+
+.system-connection span {
+    height: 1px;
+    width: 15px;
+    background: var(--surface);
+}
+
+.robot-application {
+    text-align: center;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: var(--space-3) var(--space-3);
+    font-size: var(--type-caption);
+    color: var(--foreground);
+}
+
+.workflow-explanation {
+    min-height: 123px;
+    margin-top: var(--space-6);
+}
+
+.workflow-explanation p:first-child {
+    font-size: var(--type-caption);
+    color: var(--foreground);
+    margin-bottom: var(--space-2);
+}
+
+.workflow-explanation p:last-child {
+    color: var(--muted);
+    font-size: var(--type-caption);
+    line-height: 1.8;
+}
+
+.integration-footnote {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-5);
+    margin-top: var(--space-6);
+    font-size: var(--type-caption);
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* A manufacturing record, ready for actual workshop footage. */
+.execution {
+    background: var(--surface);
+}
+
+.execution-heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    align-items: end;
+}
+
+.execution-heading > p {
+    max-width: 440px;
+    font-size: var(--type-body);
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.workshop-layout {
+    margin-top: var(--space-10);
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: var(--space-5);
+    align-items: stretch;
+}
+
+.workshop-film {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.workshop-film > .local-media {
+    flex: 1;
+    min-height: 390px;
+}
+
+.film-placeholder {
+    height: 100%;
+    min-height: 390px;
+    background: var(--surface);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-8);
+}
+
+.film-frame {
+    position: absolute;
+    inset: 22px;
+    border: 1px solid var(--line);
+}
+
+.film-frame::before, .film-frame::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: var(--muted);
+}
+
+.film-frame::before {
+    left: -1px;
+    top: -1px;
+    border-left: 1px solid;
+    border-top: 1px solid;
+}
+
+.film-frame::after {
+    right: -1px;
+    bottom: -1px;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.film-placeholder > p {
+    font-size: clamp(26px, 3vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+    color: var(--muted);
+    margin-bottom: var(--space-3);
+}
+
+.film-placeholder > span:not(.film-frame) {
+    font-size: var(--type-caption);
+    color: var(--muted);
+}
+
+.film-placeholder .media-pending {
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-size: var(--type-caption);
+}
+
+.workshop-film figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-top: 13px;
+    color: var(--muted);
+    font-size: var(--type-caption);
+}
+
+.hardware-record {
+    background: var(--surface);
+    padding: var(--space-6) var(--space-8) var(--space-7);
+}
+
+.hardware-record-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--type-caption);
+    color: var(--muted);
+}
+
+.hardware-record-top .status-dot {
+    margin: 0;
+}
+
+.hardware-drawing {
+    height: 195px;
+}
+
+.gearbox-study {
+    width: 100%;
+    height: 100%;
+    color: var(--muted);
+    position: relative;
+}
+
+.gearbox-study svg {
+    width: 100%;
+    height: 100%;
+}
+
+.gearbox-study > span {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    font-size: var(--type-caption);
+    color: var(--muted);
+}
+
+.hardware-record h3 {
+    margin-top: var(--space-5);
+    font-size: var(--type-subsection);
+    letter-spacing: -.04em;
+    line-height: 1.2;
+}
+
+.hardware-record > p {
+    font-size: var(--type-caption);
+    color: var(--muted);
+    margin-top: var(--space-2);
+}
+
+.manufacturing-stages {
+    margin-block: var(--space-6);
+}
+
+.manufacturing-stages li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--type-caption);
+    line-height: 1.5;
+    padding-block: var(--space-2);
+}
+
+.manufacturing-stages li > span:last-child {
+    margin-left: auto;
+    color: var(--muted);
+}
+
+.stage-mark {
+    display: inline-flex;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.stage-mark.complete {
+    border: 0;
+    font-size: var(--type-caption);
+}
+
+.stage-mark.current {
+    border-color: var(--muted);
+    box-shadow: inset 0 0 0 3px var(--surface);
+    background: var(--surface);
+}
+
+.hardware-record a {
+    font-size: var(--type-caption);
+}
+
+.execution-note {
+    margin-top: var(--space-5);
+    max-width: 670px;
+    font-size: var(--type-caption);
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* Open development is an editorial preview, explicitly forthcoming. */
+.open-engineering {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: var(--space-24);
+    align-items: center;
+}
+
+.open-copy h2 {
+    font-size: var(--type-section);
+    line-height: .99;
+}
+
+.open-copy > p:not(.section-kicker) {
+    color: var(--muted);
+    font-size: var(--type-body);
+    line-height: 1.8;
+    margin-block: var(--space-7);
+    max-width: 340px;
+}
+
+.publication-note {
+    display: block;
+    color: var(--muted);
+    font-size: var(--type-caption);
+    line-height: 1.7;
+    margin-top: var(--space-5);
+}
+
+.project-study {
+    position: relative;
+    aspect-ratio: 1.65;
+    background: var(--surface);
+    overflow: hidden;
+}
+
+.project-sketch {
+    width: 100%;
+    height: 100%;
+    color: var(--muted);
+    transition: transform 500ms;
+}
+
+.project-preview:hover .project-sketch {
+    transform: scale(1.025);
+}
+
+.project-study-caption {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    inset: auto 20px 16px;
+    color: var(--muted);
+    font-size: var(--type-caption);
+}
+
+.project-index > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-5);
+    padding-block: var(--space-6);
+    border-bottom: 1px solid var(--line);
+}
+
+.project-index h3 {
+    font-size: var(--type-subsection);
+    letter-spacing: -.03em;
+}
+
+.project-index p {
+    color: var(--muted);
+    font-size: var(--type-caption);
+    line-height: 1.65;
+    margin-top: var(--space-2);
+    max-width: 290px;
+}
+
+.project-index > a > span {
+    flex-shrink: 0;
+    color: var(--muted);
+    font-size: var(--type-caption);
+}
+
+.project-index > a > span span {
+    display: inline-block;
+    margin-left: var(--space-3);
+    transition: transform 200ms;
+}
+
+.project-index > a:hover > span span {
+    transform: translate(2px, -2px);
+    color: var(--foreground);
+}
+
+/* The people and three useful paths forward. */
+.people {
+    border-top: 1px solid var(--line);
+}
+
+.people-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    align-items: center;
+}
+
+.people-intro > div > p:not(.section-kicker) {
+    max-width: 370px;
+    margin-block: var(--space-7);
+    font-size: var(--type-body);
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.founder-media {
+    min-height: 260px;
+    height: 100%;
+}
+
+.founder-placeholder {
+    min-height: 260px;
+    height: 100%;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-8);
+}
+
+.founder-placeholder > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    font-size: clamp(17px, 2vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -.03em;
+    color: var(--muted);
+}
+
+.founder-placeholder > div > span:nth-child(2) {
+    font-size: var(--type-subsection);
+    color: var(--muted);
+}
+
+.founder-placeholder > p {
+    color: var(--muted);
+    font-size: var(--type-caption);
+    line-height: 1.7;
+    margin-top: var(--space-12);
+}
+
+.participation {
+    margin-top: var(--space-16);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    align-items: start;
+}
+
+.participation > h3 {
+    font-size: clamp(40px, 4.8vw, 68px);
+    letter-spacing: -.055em;
+    line-height: 1.03;
+    padding-top: var(--space-4);
+}
+
+.participation nav > a {
+    display: flex;
+    gap: var(--space-5);
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    padding-block: var(--space-5);
+}
+
+.participation nav > a strong {
+    display: block;
+    font-size: var(--type-body);
+    font-weight: 450;
+}
+
+.participation nav > a div > span {
+    display: block;
+    color: var(--muted);
+    font-size: var(--type-caption);
+    line-height: 1.7;
+    margin-top: var(--space-2);
+}
+
+.participation nav > a > span {
+    color: var(--muted);
+    transition: transform 200ms;
+}
+
+.participation nav > a:hover > span {
+    color: var(--foreground);
+    transform: translate(2px, -2px);
+}
+
+@media (max-width: 1100px) {
+    .hero h1 {
+        font-size: var(--type-hero);
+    }
+
+    .hero-art {
+        min-height: 540px;
+    }
+
+    .integration-workbench {
+        gap: var(--space-8);
+    }
+
+    .workflow-controls strong {
+        font-size: var(--type-subsection);
+    }
+
+    .workflow-detail {
+        padding: var(--space-6);
+    }
+
+    .execution-heading, .people-intro, .participation {
+        gap: var(--space-10);
+    }
+
+    .workshop-layout {
+        grid-template-columns: 1.1fr 1fr;
+    }
+
+    .open-engineering {
+        gap: var(--space-12);
+    }
+}
+
+@media (max-width: 760px) {
+    .nav-inner {
+        height: 58px;
+        padding-inline: var(--space-5);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 112px;
+    }
+
+    .hero-copy {
+        padding-bottom: 0;
+    }
+
+    .hero .section-kicker {
+        margin-bottom: var(--space-6);
+        font-size: var(--type-caption);
+    }
+
+    .hero h1 {
+        font-size: var(--type-hero);
+        line-height: 1.02;
+    }
+
+    .hero-description {
+        max-width: 440px;
+        font-size: var(--type-body);
+        margin-top: var(--space-6);
+    }
+
+    .signup {
+        margin-top: var(--space-6);
+    }
+
+    .hero-art {
+        min-height: 340px;
+        margin-top: var(--space-6);
+    }
+
+    .hero-art-label {
+        display: none;
+    }
+
+    .hero-art .motion-media {
+        width: 100%;
+        left: 0;
+        top: -10px;
+    }
+
+    .concept-tag {
+        top: 0;
+        bottom: auto;
+        left: 0;
+    }
+
+    .hero-baseline {
+        flex-direction: column;
+        gap: var(--space-5);
+        font-size: var(--type-caption);
+        margin-top: var(--space-7);
+    }
+
+    .hero-baseline a:last-child {
+        line-height: 1.7;
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .section-heading > p {
+        max-width: 500px;
+    }
+
+    .integration-workbench {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+        margin-top: var(--space-8);
+    }
+
+    .workflow-controls button {
+        padding-block: var(--space-5);
+    }
+
+    .workflow-controls strong {
+        font-size: var(--type-subsection);
+    }
+
+    .workflow-detail {
+        padding: var(--space-6);
+    }
+
+    .workflow-explanation {
+        min-height: 112px;
+    }
+
+    .integration-footnote {
+        flex-direction: column;
+        gap: var(--space-2);
+        font-size: var(--type-caption);
+    }
+
+    .execution-heading {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .execution-heading > p {
+        font-size: var(--type-body);
+    }
+
+    .workshop-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+        margin-top: var(--space-8);
+    }
+
+    .workshop-film > .local-media, .film-placeholder {
+        min-height: 270px;
+    }
+
+    .film-placeholder {
+        padding: var(--space-8);
+    }
+
+    .film-placeholder > p {
+        font-size: 33px;
+    }
+
+    .film-placeholder .media-pending {
+        top: 30px;
+        left: 30px;
+    }
+
+    .hardware-record {
+        padding: var(--space-6);
+    }
+
+    .hardware-drawing {
+        height: 210px;
+    }
+
+    .hardware-record h3 {
+        font-size: var(--type-subsection);
+    }
+
+    .open-engineering {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .open-copy h2 {
+        font-size: var(--type-section);
+    }
+
+    .open-copy > p:not(.section-kicker) {
+        max-width: 450px;
+    }
+
+    .project-index p {
+        font-size: var(--type-caption);
+    }
+
+    .project-index h3 {
+        font-size: var(--type-subsection);
+    }
+
+    .project-index > a > span {
+        font-size: var(--type-caption);
+    }
+
+    .project-study-caption {
+        font-size: var(--type-caption);
+        inset-inline: 15px;
+    }
+
+    .people-intro {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .founder-media, .founder-placeholder {
+        min-height: 220px;
+    }
+
+    .founder-placeholder > div {
+        font-size: clamp(19px, 4.3vw, 28px);
+    }
+
+    .participation {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        margin-top: var(--space-10);
+    }
+
+    .participation > h3 {
+        font-size: 48px;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .workflow-detail {
+        padding: var(--space-5);
+    }
+
+    .stack-piece > span, .system-interface {
+        font-size: var(--type-caption);
+    }
+}
+
+
+.hero-art {
+    overflow: clip;
+    background: var(--media-background);
+}
+
+.hero-art-label, .hardware-record-top, .hardware-record > p, .manufacturing-stages,
+.gearbox-study > span, .workshop-film figcaption, .project-study-caption,
+.workflow-index, .system-caption, .stack-piece > span, .system-interface {
+    font-family: var(--font-technical);
+    font-size: var(--type-meta);
+    font-weight: 400;
+}
+
+.workflow-controls button[aria-pressed="true"] .workflow-index,
+.stage-mark.current {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.workflow-controls strong {
+    line-height: 1.25;
+}
+
+.hero-baseline a:hover, .project-index > a:hover > span span, .participation nav > a:hover > span {
+    color: var(--accent);
+}
+
+.stage-mark.current {
+    background: var(--accent);
+}
+
+.execution {
+    background: var(--background);
+}
+
+/* Typographic roles inherited from the central scale. Geometry stays section-local. */
+.hero {
+    padding-top: calc(var(--header-height) + var(--space-12));
+}
+
+.hero-description, .section-heading > p, .execution-heading > p,
+.open-copy > p:not(.section-kicker), .people-intro > div > p:not(.section-kicker) {
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+}
+
+.signup {
+    max-width: 30rem;
+}

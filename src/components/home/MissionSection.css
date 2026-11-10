@@ -1,0 +1,189 @@
+.em-mission {
+    padding-top: var(--space-6);
+    padding-bottom: calc(clamp(var(--space-6), 3vw, var(--space-12)) + var(--space-3));
+}
+
+.em-mission-strip {
+    position: relative;
+    min-height: 44px;
+}
+
+.em-mission-product-note {
+    position: absolute;
+    top: calc(var(--space-3) - var(--space-6));
+    right: 0;
+    color: var(--muted);
+    font-family: var(--font-technical);
+    font-size: var(--type-annotation);
+    line-height: 1.4;
+    letter-spacing: .02em;
+    text-align: right;
+}
+
+.em-mission-cue {
+    position: absolute;
+    z-index: 1;
+    top: calc(-1 * (var(--space-6) + 3rem));
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: min(15.625rem, calc(100vw - 3rem));
+    min-height: 3rem;
+    padding: var(--space-3);
+    border-radius: var(--radius-tab) var(--radius-tab) 0 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    font-size: var(--type-meta);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: .065em;
+}
+
+.em-mission-cue::before,
+.em-mission-cue::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: var(--radius-fillet);
+    height: var(--radius-fillet);
+    pointer-events: none;
+}
+
+.em-mission-cue::before {
+    right: 100%;
+    background: radial-gradient(circle at top left, transparent var(--radius-fillet), var(--background) var(--radius-fillet));
+}
+
+.em-mission-cue::after {
+    left: 100%;
+    background: radial-gradient(circle at top right, transparent var(--radius-fillet), var(--background) var(--radius-fillet));
+}
+
+.em-mission-cue span {
+    color: var(--accent);
+    font-family: var(--font-technical);
+    font-size: .875rem;
+    line-height: 1;
+}
+
+.em-mission-cue:hover {
+    color: var(--foreground);
+}
+
+.em-mission .em-mission-body-shell {
+    /* Match the Hero's content width and fluid horizontal margins. */
+    width: var(--content-width);
+    padding-inline: 0;
+}
+
+.em-mission-content {
+    margin-top: 0;
+    padding-bottom: 0;
+    font-family: var(--font-primary);
+}
+
+.em-mission-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--muted);
+    font-size: var(--type-caption);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-label);
+    letter-spacing: var(--tracking-label);
+}
+
+.em-mission-label::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    flex-shrink: 0;
+    background: var(--brass);
+}
+
+.em-mission .em-mission-headline {
+    margin-top: var(--space-4);
+    font-size: var(--type-editorial-heading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-heading);
+    letter-spacing: var(--tracking-editorial-heading);
+    text-wrap: initial;
+}
+
+.em-mission .em-mission-headline > span {
+    display: block;
+    color: var(--foreground);
+}
+
+.em-mission .em-mission-headline > span:first-child {
+    color: var(--muted);
+}
+
+.em-mission-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--layout-gap);
+    margin-top: var(--space-5);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--line);
+    align-items: center;
+}
+
+.em-mission-description {
+    max-width: 36rem;
+    color: var(--muted);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+}
+
+.em-mission-closing {
+    max-width: 35rem;
+    border-left: 3px solid var(--brass);
+    padding-left: var(--space-5);
+    color: var(--foreground);
+    font-size: var(--type-editorial-subheading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-subheading);
+    letter-spacing: var(--tracking-editorial-subheading);
+}
+
+@media (min-width: 1101px) {
+    .em-mission-product-note {
+        /* Center within the 45px of Mission visible beneath the desktop Hero. */
+        top: calc(45px / 2 - var(--space-6));
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 820px) {
+    .em-mission-strip {
+        display: grid;
+        gap: var(--space-2);
+        padding-top: calc(44px + var(--space-2));
+    }
+
+    .em-mission-product-note {
+        position: static;
+        transform: none;
+    }
+
+    .em-mission-content {
+        margin-top: var(--space-5);
+        padding-bottom: var(--space-2);
+    }
+
+    .em-mission-columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-8);
+    }
+
+    .em-mission-description {
+        /* Keep the approved paragraph measure with Plex's wider lowercase advances. */
+        font-size-adjust: ex-height var(--font-mobile-body-aspect);
+    }
+
+}

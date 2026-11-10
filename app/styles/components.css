@@ -1,0 +1,276 @@
+/* Reusable primitives. All colors resolve through the nearest section theme. */
+.technical-chip {
+    display: inline-flex;
+    padding: var(--space-chip-block) var(--space-2);
+    border: var(--stroke-ui) solid var(--line-interactive);
+    border-radius: var(--radius-control);
+    color: var(--muted);
+    font: 400 var(--type-meta)/var(--leading-technical) var(--font-technical);
+}
+.glass {
+    background: var(--glass-tint);
+    border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px var(--glass-highlight), 0 3px 16px var(--glass-shadow);
+    -webkit-backdrop-filter: blur(20px) saturate(112%);
+    backdrop-filter: blur(20px) saturate(112%);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    min-height: 3rem;
+    padding: var(--space-3) var(--space-6);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-primary);
+    font-size: var(--type-button);
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    transition: color var(--duration-fast), background-color var(--duration-fast), border-color var(--duration-fast);
+}
+
+.button--primary {
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+.button--primary:not(:disabled):hover {
+    background: var(--button-hover);
+}
+
+.button--secondary {
+    background: transparent;
+    color: var(--foreground);
+    border-color: var(--foreground);
+}
+
+.button--secondary:not(:disabled):hover {
+    background: var(--surface-hover);
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    gap: var(--space-4);
+    font-size: var(--type-button);
+    font-weight: 500;
+    line-height: 1.6;
+    transition: color var(--duration-fast);
+}
+
+.text-link > span:first-child {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: var(--space-1);
+}
+
+.text-link:hover {
+    color: var(--accent);
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 3rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+    color: var(--foreground);
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-primary);
+    font-size: var(--type-support);
+    line-height: 1.5;
+    transition: border-color var(--duration-fast), background-color var(--duration-fast);
+}
+
+.form-input::placeholder {
+    color: var(--muted);
+    opacity: 1;
+}
+
+.form-input:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.form-input:focus-visible {
+    border-color: var(--focus);
+}
+
+.form-label {
+    font-size: var(--type-caption);
+    color: var(--muted);
+}
+
+.technical-panel {
+    padding: var(--space-6);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+}
+
+.technical-panel :is(dd, td) {
+    font-family: var(--font-technical);
+    font-size: var(--type-meta);
+}
+
+.email-capture form {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--capture-padding);
+    border: var(--stroke-ui) solid var(--line);
+    border-radius: var(--radius-control);
+    background: color-mix(in srgb, var(--surface-raised) 55%, var(--background));
+}
+
+.email-capture form:focus-within { border-color: var(--focus); }
+
+.email-capture .form-input {
+    border: 0;
+    background: transparent;
+    flex: 1;
+    width: 0;
+    min-height: var(--control-height);
+    padding: var(--input-padding-block) var(--input-padding-inline);
+}
+
+.email-capture .button, .em-header-access {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    inline-size: var(--control-width);
+    min-height: var(--control-height);
+    padding: var(--space-3) var(--control-padding-end) var(--space-3) var(--control-padding-start);
+    gap: var(--control-gap);
+    border: var(--stroke-ui) solid var(--button-bg);
+    border-radius: var(--radius-control);
+    background: var(--button-bg);
+    color: var(--button-text);
+    font: var(--weight-button) var(--type-access)/1.4 var(--font-primary);
+    letter-spacing: var(--tracking-button);
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: inset 0 1px rgb(255 255 255 / 10%), 0 2px 6px rgb(17 17 17 / 9%);
+}
+.email-capture .button:not(:disabled):hover, .em-header-access:hover {
+    background: var(--button-hover);
+    border-color: var(--button-hover);
+}
+.email-capture .button:not(:disabled):active, .em-header-access:active { filter: brightness(.94); }
+.email-capture .button::before, .em-header-accessMarker {
+    content: "";
+    flex: 0 0 4px;
+    width: 4px;
+    height: 4px;
+    background: var(--button-marker);
+}
+.email-capture .button > span, .em-header-accessArrow {
+    padding-left: var(--control-gap);
+    border-left: var(--stroke-ui) solid color-mix(in srgb, var(--button-text) 25%, transparent);
+    font-size: var(--type-nav);
+    line-height: 1;
+}
+@media (max-width: 760px) {
+    .email-capture .form-input { padding-inline: var(--space-3); }
+}
+
+.signup-note {
+    margin-top: var(--space-3);
+    font-size: var(--type-caption);
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.signup-response {
+    font-size: var(--type-caption);
+    line-height: 1.7;
+    color: var(--foreground);
+}
+
+.signup-response:not(:empty) {
+    margin-top: var(--space-3);
+}
+
+/* One brand lockup, including the motto, everywhere it is used. */
+.brand-lockup {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+}
+
+.wordmark {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: .09em;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.brand-motto {
+    font-family: var(--font-primary);
+    font-size: .75rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1.4;
+    letter-spacing: .01em;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 100;
+    top: var(--space-2);
+    left: var(--space-2);
+    background: var(--soft-white);
+    color: var(--ink);
+    padding: var(--space-3);
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+    .wordmark {
+        font-size: 1.0625rem;
+    }
+
+    .brand-motto {
+        font-size: .6875rem;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .email-capture form {
+        flex-wrap: wrap;
+    }
+
+    .email-capture .form-input {
+        flex-basis: 100%;
+    }
+
+    .email-capture .button {
+        width: 100%;
+    }
+}
+
+.technical-specs dd {
+    font-family: var(--font-technical);
+    font-size: var(--type-meta);
+    line-height: 1.7;
+}

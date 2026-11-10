@@ -1,0 +1,137 @@
+@import "../ui/SectionTransition.css";
+
+.em-progress.em-platform-section {
+    position: relative;
+    padding-block: var(--section-inset-compact);
+}
+
+.em-progress .em-section-label {
+    font-family: var(--font-primary);
+    font-size: var(--type-caption);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-label);
+    letter-spacing: var(--tracking-label);
+    color: var(--muted);
+}
+
+.em-progress .em-section-label > p { gap: var(--space-3); }
+.em-progress .em-section-label > p::before {
+    flex-shrink: 0;
+    background: var(--accent);
+}
+
+.em-progress .em-section-heading {
+    align-items: center;
+    gap: clamp(var(--space-8), 4vw, var(--space-16));
+    margin-block: var(--space-4);
+}
+
+.em-progress .em-section-heading > p {
+    line-height: var(--leading-body);
+}
+
+.home .em-progress .em-section-heading h2 {
+    font-family: var(--font-primary);
+    font-size: var(--type-editorial-heading);
+    font-weight: var(--weight-editorial);
+    line-height: var(--leading-editorial-heading);
+    letter-spacing: var(--tracking-editorial-heading);
+}
+
+.em-progress .em-release-visual {
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6) var(--space-3) 0;
+}
+
+.em-progress .em-release-media {
+    flex: none;
+    min-height: 0;
+    aspect-ratio: auto;
+}
+
+.em-progress .em-release-media .local-media {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    aspect-ratio: 640 / 350;
+}
+
+.em-progress .em-gearbox-study {
+    display: block;
+    height: auto;
+    min-height: 0;
+}
+
+.em-progress .em-workshop-frame {
+    position: relative;
+    aspect-ratio: 640 / 350;
+    border: var(--stroke-ui) solid transparent;
+    border-radius: var(--radius-sm);
+}
+
+.em-progress .em-workshop-fallback,
+.em-progress .em-workshop-video {
+    position: absolute;
+    inset: var(--space-3);
+    width: calc(100% - 2 * var(--space-3));
+    height: calc(100% - 2 * var(--space-3));
+    border-radius: var(--radius-control);
+}
+
+.em-progress .em-workshop-video { object-fit: cover; }
+.em-progress .em-workshop-video[data-visible="false"] { visibility: hidden; }
+
+.em-progress .em-release-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) 0 var(--space-4) clamp(1.5rem, 3vw, 3rem);
+}
+
+.em-progress .em-release-copy h3 {
+    margin: 0;
+}
+
+.em-progress .em-release-copy h3 span {
+    display: inline;
+    color: var(--muted);
+    font-size: var(--type-support);
+    font-weight: var(--weight-editorial);
+    letter-spacing: normal;
+}
+
+.em-progress .em-release-description,
+.em-progress .em-release-invitation {
+    margin: 0;
+    font-size: var(--type-support);
+    line-height: var(--leading-body);
+}
+
+.em-progress .em-release-stages {
+    width: 100%;
+    margin: var(--space-1) 0 0;
+}
+
+.em-progress .em-release-stages > div { padding-block: var(--space-2); }
+
+.em-progress .em-release-stages > :first-child dd { color: var(--accent); }
+.em-progress .em-release-stages > :nth-child(2) dd { color: var(--muted); }
+
+.em-progress .em-release-invitation,
+.em-progress .em-release-invitation + a { margin-top: var(--space-2); }
+
+@media (min-width: 761px) {
+    .em-progress .em-section-heading {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .em-progress .em-section-heading { gap: var(--space-4); }
+    .em-progress .em-release-visual { padding-right: 0; }
+    .em-progress .em-release-copy { padding: var(--space-5) 0; }
+}
+

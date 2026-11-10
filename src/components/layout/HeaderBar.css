@@ -1,0 +1,246 @@
+.em-header-header {
+    --bar-height: var(--header-height);
+    --bar-tint: rgb(236 231 223 / 72%);
+    --bar-edge: rgb(17 17 17 / 17%);
+    --bar-highlight: rgb(255 255 255 / 65%);
+    --bar-shadow: rgb(17 17 17 / 9%);
+    width: 100%;
+    color: var(--foreground);
+    background: var(--bar-tint);
+    border-block: var(--stroke-ui) solid var(--bar-edge);
+    border-radius: 0;
+    box-shadow: inset 0 1px var(--bar-highlight), inset 0 -1px rgb(255 255 255 / 9%), 0 5px 24px var(--bar-shadow);
+    -webkit-backdrop-filter: blur(28px) saturate(120%);
+    backdrop-filter: blur(28px) saturate(120%);
+    transition: background-color var(--duration-theme), color var(--duration-theme), border-color var(--duration-theme), box-shadow var(--duration-theme);
+}
+
+.em-header-header[data-theme="dark"] {
+    --bar-tint: rgb(11 11 12 / 76%);
+    --bar-edge: rgb(245 244 242 / 19%);
+    --bar-highlight: rgb(245 244 242 / 10%);
+    --bar-shadow: rgb(0 0 0 / 25%);
+}
+
+.em-header-fixed {
+    position: fixed;
+    z-index: 50;
+    inset: 0 0 auto;
+}
+
+.em-header-row {
+    min-height: calc(var(--bar-height) - 2px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+}
+
+.em-header-brand {
+    justify-self: start;
+    width: fit-content;
+}
+
+.em-header-brand [class~="wordmark"] {
+    /* Retain the approved lockup width after the primary font migration. */
+    inline-size: 7.08964em;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .105em;
+}
+
+.em-header-brand [class~="brand-lockup"] {
+    gap: 4px;
+}
+
+.em-header-brand [class~="brand-motto"] {
+    inline-size: 9.9048em;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: .015em;
+}
+
+.em-header-navigation {
+    justify-self: center;
+}
+
+.em-header-linkList {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.em-header-linkList li {
+    position: relative;
+}
+
+.em-header-navLink {
+    position: relative;
+    display: grid;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .135em;
+    white-space: nowrap;
+    transition: color var(--duration-fast);
+}
+
+/* Preserve the existing centered navigation footprint, including hover reserves. */
+.em-header-navLink[data-label="Hardware"] { inline-size: 7.51302em; }
+.em-header-navLink[data-label="Projects"] { inline-size: 6.42839em; }
+.em-header-navLink[data-label="About"] { inline-size: 4.51432em; }
+.em-header-navLink[data-label="For teams"] { inline-size: 7.47135em; }
+
+.em-header-navLink:hover {
+    color: var(--accent);
+}
+
+.em-header-actions {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 12px;
+}
+
+
+
+
+
+
+
+.em-header-linkList li + li::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 9px;
+    top: 50%;
+    left: -18px;
+    transform: translateY(-50%);
+    background: var(--line);
+}
+
+/* Reserve the enlarged bold width so hovering never moves adjacent links. */
+.em-header-navLink::after {
+    content: attr(data-label);
+    grid-area: 1 / 1;
+    font-size: 13.5px;
+    font-weight: 700;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.em-header-navLabel {
+    grid-area: 1 / 1;
+    justify-self: center;
+    font-size: 12px;
+    font-weight: 500;
+    transition: font-size var(--duration-fast) var(--ease-out), font-weight var(--duration-fast);
+}
+
+.em-header-navLink:is(:hover, :focus-visible) {
+    color: var(--accent);
+}
+
+.em-header-navLink:is(:hover, :focus-visible) .em-header-navLabel {
+    font-size: 13.5px;
+    font-weight: 700;
+}
+
+.em-header-navLink[data-active="true"]::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: calc(50% - 1.5px);
+    width: 3px;
+    height: 3px;
+    background: var(--accent);
+}
+
+
+
+
+
+
+
+
+
+.em-header-menuToggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
+
+.em-header-mobileNavigation {
+    border-top: var(--stroke-ui) solid var(--bar-edge);
+    padding-block: 12px 24px;
+    max-height: calc(100svh - var(--bar-height));
+    overflow-y: auto;
+}
+
+.em-header-mobileNavigation[hidden] {
+    display: none;
+}
+
+.em-header-mobileNavigation > div > a:not(.em-header-access) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-block: 17px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.em-header-mobileNavigation [data-active="true"] {
+    color: var(--accent);
+}
+
+.em-header-mobileAccess {
+    display: flex;
+    width: fit-content;
+    margin-top: 16px;
+}
+
+@media (min-width: 1001px) {
+    .em-header-mobileNavigation {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .em-header-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+    }
+
+    .em-header-navigation {
+        display: none;
+    }
+
+    .em-header-menuToggle {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 600px) {
+    .em-header-row, .em-header-actions { gap: var(--space-2); }
+    .em-header-brand [class~="wordmark"] { inline-size: 6.88965em; font-size: 16px; letter-spacing: .085em; }
+    .em-header-brand [class~="brand-motto"] { font-size: 10px; }
+    .em-header-header .em-header-desktopAccess { inline-size: auto; padding-inline: var(--space-3); gap: var(--space-2); }
+    .em-header-desktopAccess .em-header-accessArrow, .em-header-desktopAccess .em-header-accessMarker { display: none; }
+    .em-header-menuToggle { font-size: 10px; letter-spacing: .02em; }
+    .em-header-menuToggle > span:first-child { display: none; }
+    .em-header-menuToggle > span:last-child { font-size: 18px; color: var(--accent); }
+}
